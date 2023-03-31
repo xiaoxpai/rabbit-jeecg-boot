@@ -1,0 +1,4 @@
+后端：https://github.com/xiaoxpai/rabbit-jeecg-boot.git
+dev=3.4.3（前端工程vue2仅支持该版本）
+
+前端：待补充
