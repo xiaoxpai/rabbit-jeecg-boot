@@ -8,7 +8,7 @@ import org.apache.shiro.authc.AuthenticationToken;
  * @desc
  **/
 public class JwtToken implements AuthenticationToken {
-	
+	//实现shiro下的AuthenticationToken接口
 	private static final long serialVersionUID = 1L;
 	private String token;
  
