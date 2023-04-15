@@ -142,6 +142,25 @@ public class VxeMockController {
     }
 
     /**
+     * 模拟更改【大船待审】状态2
+     *
+     * @param status
+     * @return
+     */
+    @GetMapping("/change42")
+    public Result mockChange42(@RequestParam("status") String status) {
+        // 封装socket数据
+        JSONObject socketData = new JSONObject(); 
+        socketData.put("key", "dispatch-dcds-status"); 
+        socketData.put("args", new Object[]{status}); 
+        String message = VxeSocket.packageMessage(VxeSocketConst.TYPE_CSD, socketData);
+        // 调用 sendMessageToAll 发送给所有在线的用户
+        VxeSocket.sendMessageToAll(message);
+
+        return Result.ok();
+    }
+
+    /**
      * 【模拟】即时保存单行数据
      *
      * @param rowData 行数据，实际使用时可以替换成一个实体类
